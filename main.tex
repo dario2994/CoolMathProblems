@@ -1,0 +1,57 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{CommandsAndStyle}
+% \usepackage{forloop}
+
+\newcounter{ProblemNumber}
+
+\newcommand\Problem[2]{
+	\addtocounter{ProblemNumber}{1}%
+	\expandafter\def\csname Problem_\theProblemNumber\endcsname{#1}%
+	\subsection{#1}\label{Problem_\theProblemNumber}#2%
+}
+
+\newcommand\Hint[1]{
+	\expandafter\def\csname Hint_\theProblemNumber\endcsname{#1}%
+	\paragraph{Hint:} Clicca \hyperref[Hint_\theProblemNumber]{qui} per un hint.%
+}
+
+\newcommand\Solution[1]{\paragraph{Dimostrazione}\begin{proof}#1\end{proof}}
+\newcommand\Comment[1]{\paragraph{Commento:}#1}
+
+\title{Raccolta di problemi matematici}
+\author{Federico Glaudo}
+
+\makeindex[title=Indice analitico]
+\indexsetup{level=\section}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Dopo un anno di matematica universitaria mi sono accorto della rarità e del valore dei bei problemi. Sono pochi quelli adatti ad entrare in questa categoria: devono essere ``fattibili''\footnote{Cosa c'è di più soggettivo della difficoltà? Qui si intende che la soluzione di ogni problema è, con i dovuti strumenti, non più di un'idea ben scelta.} e piacevoli tanto nell'enunciato quanto nella soluzione.
+	
+	L'argomento dei problemi sarà vario, ma la difficoltà non poi molto. Alcuni dei problemi sono celeberrimi, altri misconosciuti. Alcuni si prestano anche a soluzioni brutte, ma tutti sono risolvibili elegantemente con un guizzo d'ingegno.
+	
+	Questo documento è pensato per essere \emph{consultato in versione digitale} piuttosto che cartacea. 
+	Infatti i testi dei problemi sono tutti all'inizio ed ognuno linka agli eventuali hint e soluzioni relativi ad esso. Sia gli hint che le soluzioni sono \emph{uno per pagina}, affinché non capiti, per sbaglio o per la debolezza di un momento, di leggere un hint o una soluzione a cui non si è interessati. Ovviamente anche gli hint e le soluzioni espongono un link che rimanda al testo del problema. 
+	%TODO: Completare qui, dicendo che strumenti servono e perché risolverli.
+\end{abstract}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\include{./problems/Algebra}
+\include{./problems/Analisi}
+%
+\addtocounter{ProblemNumber}{1}%
+\newcounter{ActProb}%
+\forloop{ActProb}{1}{\number\value{ActProb} < \number\value{ProblemNumber}}{%
+	\ifcsname Hint_\theActProb\endcsname%
+		\paragraph{Hint per ``\protect\csname Problem_\theActProb\endcsname'':}\label{Hint_\theActProb}%
+		\csname Hint_\theActProb\endcsname \ (\hyperref[Problem_\theActProb]{Testo del problema})%
+	\fi%
+}%
+%
+\end{document}

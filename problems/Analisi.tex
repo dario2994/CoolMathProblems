@@ -1,0 +1,32 @@
+\section{Analisi}
+
+\Problem{Contrazioni in un compatto}{
+Sia $(X,d)$ uno spazio metrico compatto ed $f:X\to X$ una funzione tale che
+\begin{equation*}
+	\forall x,y\in X: d\left(f(x),f(y)\right)<d(x,y)\punto
+\end{equation*}
+Allora la funzione $f$ ammette un punto fisso.
+}
+\Hint{La funzione $x\mapsto d(x,f(x))$ ammette minimo.}
+
+\Problem{Punti di discontinuità}{
+Esiste una funzione $f:\R\to\R$ tale che sia continua in $x\in\R$ se e solo se $x\in\Q$?
+}
+\Hint{La risposta è no e per dimostrarlo si può passare dal fatto che i punti di discontinuità di $f$ sono un insieme magro (nell'ipotesi in cui su $\Q$ la funzione sia continua) e concludere con Baire.}
+
+\Problem{Misura del tetraedro \texorpdfstring{$n$}{n}-dimensionale}{
+Calcolare la misura del tetraedro $n$-dimensionale di lato unitario. Con tetraedro $n$-dimensionale si intende l'inviluppo convesso di $n+1$ punti in $\R^n$ equidistanti tra di loro.
+}
+\Hint{E se calcolassimo la misura in $\R^{n+1}$ al poso che in $\R^n$? Allora potremmo scegliere come vertici del tetraedro la base canonica...}
+
+\Problem{Integrale di Eulero}{
+Dimostrare l'uguaglianza
+\begin{equation*}
+	\int_{-\infty}^{\infty}e^{-x^2}\de x=\sqrt\pi
+\end{equation*}
+}
+\Hint{Considerate l'identità
+\begin{equation*}
+	\left(\int_{-\infty}^{\infty}e^{-x^2}\right)^2 = \int_{\R^2}e^{-(x^2+y^2)}\de(x,y)\punto
+\end{equation*}
+}
