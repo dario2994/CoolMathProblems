@@ -31,3 +31,27 @@ Dimostrare l'uguaglianza
 \end{equation*}
 Alternativamente, se conoscete la funzione gamma di Eulero, potreste sfruttare il fatto che, ad esempio con la formula di duplicazione, potete calcolare $\Gamma(\frac12)$.
 }
+
+\Problem{Quasi l'esponenziale}{
+Fissato $k=10^{10000}$, mostrate la stima
+\begin{equation*}
+	\left\lvert\sum_{n=0}^k (-1)^n \frac{k^n}{n!^2}\right\lvert\le 1 \punto
+\end{equation*}
+Riuscite a migliorarla?
+}
+\Hint{Il comportamento asintotico delle soluzioni di equazioni differenziali può essere studiato con stime di tipo energia.}
+\Solution{Sia $y:\R\to\R$ la funzione analitica definita come
+\begin{equation*}
+	y(x)=\sum_{n=0}^{\infty} (-1)^n\frac{x^n}{n!^2}
+\end{equation*}
+e sia $u:\R\to\R$ definita come $u(x)=x\cdot y'(x)$. 
+È facile verificare che $u''=-\frac ux$ e che quindi la quantità $E(x)=\frac{u^2}x+{u'}^2$ ha come derivata $-\frac{u^2}{x^2}$.
+
+A questo punto notiamo, che per $x\ge 1$, vale
+\begin{equation*}
+	y(x)^2=u'(x)^2\le E(x)\le E(1)=u(1)^2+{u'(1)}^2\le \left(\frac14\right)^2+\left(\frac12\right)^2<\frac12 \virgola
+\end{equation*}
+da cui la tesi discende facilmente.
+
+Per avere stime migliore per $y$, si deve studiare come si comporta asintoticamente l'energia. Euristicamente sembra valere $E(x)\propto\frac1{\log^2(x)}$.
+}
