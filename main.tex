@@ -15,7 +15,12 @@
 	\paragraph{Hint:} Clicca \hyperref[Hint_\theProblemNumber]{qui} per un hint.%
 }
 
-\newcommand\Solution[1]{\paragraph{Dimostrazione}\begin{proof}#1\end{proof}}
+\newcommand\Solution[1]{
+	\expandafter\def\csname Solution_\theProblemNumber\endcsname{#1}%
+	\paragraph{Soluzione:} Clicca \hyperref[Solution_\theProblemNumber]{qui} per la soluzione.%
+}
+
+% \newcommand\Solution[1]{\paragraph{Dimostrazione}\begin{proof}#1\end{proof}}
 \newcommand\Comment[1]{\paragraph{Commento:}#1}
 
 \title{Raccolta di problemi matematici}
@@ -50,11 +55,25 @@
 \include{./problems/Geometria}
 %
 \addtocounter{ProblemNumber}{1}%
+%
+\section{Hints}
 \newcounter{ActProb}%
 \forloop{ActProb}{1}{\number\value{ActProb} < \number\value{ProblemNumber}}{%
 	\ifcsname Hint_\theActProb\endcsname%
 		\paragraph{Hint per ``\protect\csname Problem_\theActProb\endcsname'':}\label{Hint_\theActProb}%
 		\csname Hint_\theActProb\endcsname \ (\hyperref[Problem_\theActProb]{Testo del problema})%
+	\fi%
+}%
+%
+\newpage
+%
+\section{Soluzioni}
+%
+\setcounter{ActProb}{0}%
+\forloop{ActProb}{1}{\number\value{ActProb} < \number\value{ProblemNumber}}{%
+	\ifcsname Solution_\theActProb\endcsname%
+		\paragraph{Soluzione di ``\protect\csname Problem_\theActProb\endcsname'':}\label{Solution_\theActProb}%
+		\csname Solution_\theActProb\endcsname \ (\hyperref[Problem_\theActProb]{Testo del problema})%
 	\fi%
 }%
 %
