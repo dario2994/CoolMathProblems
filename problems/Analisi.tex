@@ -60,3 +60,13 @@ Per avere stime migliore per $y$, si deve studiare come si comporta asintoticame
 Se $f:\R^n\to\R^n$ è una funzione tale che il differenziale $\de f$ è antisimmetrico in ogni punto, allora $f$ è una funzione affine.
 }
 \Hint{Applicate il lemma di Schwartz (la commutazione delle derivate) alle componenti di $f$.}
+
+\Problem{Serie alternante}{
+Dati due numeri reali positivi $a,b>0$, la serie $\sum_{n=1}^\infty \frac{\cos n^b}{n^a}$ converge se e solo se $a+b>1$.
+}
+\Hint{Quando $a+b\le 1$, al variare di $k\in\N$, considerate la somma parziale
+\begin{equation*}
+	\sum_{2k\pi\le n^b\le (2k+\frac14)\pi}\frac{\cos n^b}{n^a}\punto
+\end{equation*}
+Viceversa, per mostrare la convergenza, provate a riscrivere la serie come somma di Abel.
+}
