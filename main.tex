@@ -62,6 +62,7 @@
 	\ifcsname Hint_\theActProb\endcsname%
 		\paragraph{Hint per ``\protect\csname Problem_\theActProb\endcsname'':}\label{Hint_\theActProb}%
 		\csname Hint_\theActProb\endcsname \ (\hyperref[Problem_\theActProb]{Testo del problema})%
+		\newpage%
 	\fi%
 }%
 %
@@ -74,6 +75,7 @@
 	\ifcsname Solution_\theActProb\endcsname%
 		\paragraph{Soluzione di ``\protect\csname Problem_\theActProb\endcsname'':}\label{Solution_\theActProb}%
 		\csname Solution_\theActProb\endcsname \ (\hyperref[Problem_\theActProb]{Testo del problema})%
+		\newpage%
 	\fi%
 }%
 %
