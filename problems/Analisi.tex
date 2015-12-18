@@ -70,3 +70,17 @@ Dati due numeri reali positivi $a,b$ con $b<1$, la serie $\sum_{n=1}^\infty \fra
 \end{equation*}
 Viceversa, per mostrare la convergenza, provate a riscrivere la serie come somma di Abel.
 }
+
+\Problem{Disuguaglianza di Hilbert}{
+	Date due sequenze $a_1, a_2, \dots ,a_N$ e $b_1, b_2,\dots, b_N$ di numeri complessi, dimostrare che
+	\begin{equation*}
+		\left\lvert\sum_{m\not=n}\frac{a_mb_n}{m-n}\right\lvert\le 
+		\pi \left(\sum_{m=1}^Na_m^2\right)^{\frac12}\left(\sum_{n=1}^Nb_n^2\right)^{\frac12}\punto
+	\end{equation*}
+}
+\Hint{Considerare l'integrale
+\begin{equation*}
+	\int_0^{2\pi}(\pi-x)A(-x)B(x)\de x\virgola
+\end{equation*}
+dove $A$ e $B$ sono i polinomi trigonometrici con coefficienti $(a_m)$ e $(b_n)$.
+}
