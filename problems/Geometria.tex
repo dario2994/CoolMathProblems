@@ -14,3 +14,24 @@ Sia $\gamma:\cc{0}{1}\to\R^2$ una curva continua con $\gamma(0)=(0, 0)$ e $\gamm
 Mostrare che, fissato $0<d<1$, esistono due tempi $t_1,t_2\in\cc{0}{1}$ tali che $\gamma(t_1)$ e $\gamma(t_2)$ formano un segmento parallelo all'asse delle $x$ e di lunghezza $d$ o $1-d$.
 }
 \Hint{È equivalente ad affermare che una curva sul cilindro omotopica al generatore del gruppo fondamentale interseca una rotazione di se stessa. A questo punto, dopo aver ``pulito'' $\gamma$, si ritorna opportunamente sul piano e si nota che qualcosa non torna per Jordan.}
+
+\Problem{Coni convessi chiusi}{
+	Dato un cono convesso chiuso $C\subseteq \R^n$ sono equivalenti le seguenti affermazioni:
+	\begin{itemize}
+		\item Una retta è contenuta in $C$.
+		\item Per ogni funzionale $L\in(\R^n)'$ esiste $x\in C\setminus\{0\}$ tale che $Lx\ge 0$.
+	\end{itemize}
+}
+\Hint{Considerate $C\cap S^{n-1}$.}
+\Solution{Mostriamo che se $C$ non contiene rette allora esiste un funzionale che valutato su $C$ è ovunque negativo.
+	
+	L'insieme $D = C\cap S^{n-1}$ è chiuso e convesso e senza punti antipodali.
+	
+	Intersecando $D$ con $x_n=0$, per induzione, si trova che, senza perdita di generalità, $D$ è disgiunto dall'insieme $x_{n-1}\le 0$.
+	
+	Denotiamo ora con $S$ il sottospazio vettoriale di $\R^n$ dato da $x_n=x_{n-1}=0$ e con $P$ il piano ortogonale ad $S$. Definiamo ora la funzione angolo $\theta:P\to S^1$ che associa ad ogni elemento di $P$ l'angolo che forma con la retta $x_{n-1}=0$. È ovvio che a meno di proiettare su $P$ la funzione $\theta$ si estende a tutto $S^{n-1}$. % FIXME: Sarebbe da definire meglio l'angolo
+	
+	Chiamiamo $A$ l'immagine di $D$ tramite $\theta$. 
+	Per quanto detto sopra, di certo $A$ non contiene $0$. Inoltre, visto che $D$ è convesso, anche $A$ è convesso.
+	Allora, facilmente, si ha che $A$ è contenuto in una semicirconferenza e, prendendo la controimmagine della semicirconferenza tramite $\theta$, si trova che $D$ è contenuto in un semispazio. Si dovrebbe ancora verificare che, a meno di spostare di pochissimo questo semispazio, $D$ non è neanche sul bordo del semispazio e quindi esiste un funzionale che falsifica l'ipotesi.
+}
