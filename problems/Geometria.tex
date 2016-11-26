@@ -37,3 +37,23 @@ Mostrare che, fissato $0<d<1$, esistono due tempi $t_1,t_2\in\cc{0}{1}$ tali che
 	
 	Rimane solo da verificare che, a meno di spostare di pochissimo questo semispazio, $D$ non è neanche sul bordo del semispazio e quindi esiste un funzionale che falsifica l'ipotesi. Lasciamo al lettore quest'ultimo passo.
 }
+
+\Problem{Allacciando colonne}{
+	Re Mida ha un salone rotondo con $n\in\N$ colonne ed ha una corda d'oro di inestimabile valore (che potete assumere lunga a piacere). La corda è ``aperta'', nel senso che le estremità non sono collegate.
+	
+	Egli vuole allacciare (cioè disporre a piacimento e poi fondere le estremità) la corda intorno alle colonne in modo che non sia possibile rubarla. 
+	Teme però il cedimento del salone e vorrebbe perciò che fosse possibile portare via la corda non appena una qualunque delle $n$ colonne crolli.
+	Può re Mida riuscire in questo particolare allacciamento?
+}
+\Hint{Considerate i gruppi fondamentali (e le loro immersioni canoniche l'uno nell'altro) del piano euclideo senza $n$ o $n-1$ punti. Mostrate quindi per induzione che Re Mida può allacciare la corda come richiesto. }
+\Solution{Denotiamo con $\pi(p_1, p_2, \dots, p_k)$ il gruppo fondamentale di $\R^2$ privato dei punti $p_1, p_2,\dots, p_k$ (tali punti rappresentano le colonne del salone). 
+	
+	È fatto noto che come gruppo $\pi(p_1, p_2, \dots p_k)$ è $\overbrace{\Z\ast \cdots \ast \Z}^{\text{$k$ volte}}$.
+	Inoltre l'omomorfismo canonico indotto dall'immersione da $\pi(p_1, p_2, \dots p_k)$ in $\pi(p_1, p_2, \dots, \hat{p_i}, \dots, p_k)$ visto sui rappresentanti canonici dei gruppi liberi consiste nell'ignorare l'$i$-esimo rappresentante. Denotiamo con $\iota_i^k$ la mappa appena descritta tra i gruppi liberi
+	\begin{equation}
+		\iota_i^k:\overbrace{\Z\ast \cdots \ast \Z}^{\text{$k$ volte}} \to \overbrace{\Z\ast \cdots \ast \Z}^{\text{$k-1$ volte}} \punto
+	\end{equation}
+	Il problema è ora equivalente a chiedersi se esiste una parola $w\in\overbrace{\Z\ast \cdots \ast \Z}^{\text{$n$ volte}}$ diversa dall'identità tale che $\iota_i^n(w)$ è l'identità per ogni $1\le i\le n$.
+	
+	Mostriamo per induzione su $n$ che tale parola esiste. Per $n=1$ è banale. Se $w_{n-1}$ è una parola che rispetta per $n-1$, è facile convincersi che $x_nw_{n-1}x_n^{-1}w_{n-1}^{-1}$ funziona per $n$ (dove con $x_1,\dots, x_n$ stiamo denotando i rappresentanti canonici dei gruppi liberi).
+}
